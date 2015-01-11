@@ -3,7 +3,7 @@ data<-read.table('household_power_consumption.txt',header=TRUE,sep=';',nrows=710
 power<-subset(data,data$Date=='1/2/2007'|data$Date=='2/2/2007')
 power$DateTime <- as.POSIXct(paste(power$Date, power$Time), format="%d/%m/%Y %H:%M:%S") 
 dt<-power$DateTime
-par(mfrow=c(2,2),cex=.6)
+par(mfrow=c(2,2),cex=.8)
 ap<-power$'Global_active_power'
 plot(ap~dt,xlab='',ylab='Global Active Power',type='l')
 voltage<-power$'Voltage'
